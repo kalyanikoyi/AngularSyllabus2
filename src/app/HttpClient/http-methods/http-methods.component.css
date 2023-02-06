@@ -1,0 +1,20 @@
+.edit{
+    text-decoration: none;
+    background-color: rgb(3, 3, 219);
+    color: white;
+    margin: 2rem;
+    padding: .5rem;
+    cursor: pointer;
+}
+.delete{
+    text-decoration: none;
+    background-color: rgb(222, 1, 1);
+    color: white;
+    padding: .5rem;
+    cursor: pointer;
+}
+.buttons{
+    display: flex;
+justify-content: center;
+margin: 2rem;
+}

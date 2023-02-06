@@ -1,0 +1,14 @@
+input.ng-touched.ng-invalid{
+    border-left: .5rem solid red;
+}
+h1{
+    margin-bottom: 4rem;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.login{
+    margin-right: 2rem;
+}

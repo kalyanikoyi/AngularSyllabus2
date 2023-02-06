@@ -1,0 +1,39 @@
+{
+  "empDetails": [
+    {
+      "id": 1,
+      "ename": "Chalapathi",
+      "salary": 100000,
+      "location": "Hyderabad",
+      "designation": "Developer"
+    },
+    {
+      "id": 2,
+      "ename": "Kalyani",
+      "salary": 30000,
+      "location": "Hyderabad",
+      "designation": "Software Developer"
+    },
+    {
+      "id": 3,
+      "ename": "Manasvi",
+      "salary": 10000,
+      "location": "Indian",
+      "designation": "Student"
+    },
+    {
+      "id": 4,
+      "ename": "Manvika",
+      "salary": 30000,
+      "location": "Indian",
+      "designation": "Student"
+    },
+    {
+      "id": 5,
+      "ename": "Manu",
+      "salary": 30000,
+      "location": "Indian",
+      "designation": "Student"
+    }
+  ]
+}

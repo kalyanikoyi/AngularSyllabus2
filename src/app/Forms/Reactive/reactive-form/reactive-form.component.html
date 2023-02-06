@@ -1,0 +1,42 @@
+<h1 style="text-align: center;">Reactive Form</h1>
+<div class="col-md-4 offset-md-4">
+    <div class="card">
+        <div class="card-header bg-success text-center">
+            <h2 class=" text-light">Registration Form</h2>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="register" (ngSubmit)="onsubmit(register)">
+                <div class="name">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" formControlName="name">
+                    <div *ngIf=" name && name.invalid && name.touched && !name.dirty" class="text-danger">Please enter name</div>
+                    <div *ngIf="name && name.invalid && name.dirty " class="text-danger">Minimum number of characters 5 </div>
+                    <div *ngIf="register.controls['name'].invalid && register.hasError('maxLength')">Maximum number of Characters 10</div> <br>
+                </div>
+                <div class="Email">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" formControlName="email">
+                    <div *ngIf="email && email.touched && email.invalid"  class="text-danger">Please enter email-Id</div>
+                    <div *ngIf="email && email.dirty && email.invalid" class="text-danger">Incorrect email address</div>
+                </div><br>
+                <div class="password">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" formControlName="password">
+                    <div *ngIf="password && password.touched && password.invalid && !password.dirty"  class="text-danger">Please enter password</div>
+                    <div *ngIf="password && password.invalid && password.dirty" class="text-danger">password should contain numbers,upperCase & lowerCase  </div>
+                </div><br>
+                <div class="confoPass">
+                    <label for="confoPass" class="form-label">Confirm password</label>
+                    <input type="password" class="form-control" formControlName="confoPass">
+                    <div class="text-danger" *ngIf="password && confoPass && password.value != confoPass.value && confoPass.dirty">Password does not match</div>
+                </div><br>
+                <div class="card-footer">
+                <div class="buttons text-center">
+                    <button type="submit" class="btn btn-primary m-1" [disabled]="!register.valid">Register</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

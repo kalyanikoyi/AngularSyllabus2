@@ -1,0 +1,27 @@
+<h1 style="text-align: center;">Template driven form</h1>
+<div class="col-md-4 offset-md-4">
+    <div class="card">
+        <div class="card-header bg-success">
+            <h2 style="text-align: center;" class="text-light">Login form</h2>
+        </div>
+        <div class="card-body">
+            <form #login="ngForm" (ngSubmit)="onSubmit(login)">
+                <div class="email">
+                    <label for="e-mail" class="form-label">E-mali</label>
+                    <input type="email" class="form-control" ngModel name="email" #email="ngModel" required>
+                    <div *ngIf="email.touched && email.invalid" class="text-danger">Plese enter E-mail</div>
+                </div>
+                <div class="password">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" ngModel name="password" #password="ngModel" required>
+                    <div *ngIf="password.touched && password.invalid" class="text-danger">Plese enter password</div>
+
+                </div>
+                <div class="buttons">
+                    <button type="submit" class="btn btn-primary login" [disabled]="!login.valid">Login</button>
+                    <button type="reset" class="btn btn-secondary reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

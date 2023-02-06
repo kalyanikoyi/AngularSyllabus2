@@ -1,0 +1,66 @@
+<div class="card">
+    <div class="card-header">
+        <h1 style="text-align: center;">Employee details</h1>
+    </div>
+    <div class="card-body">
+     <table class="table table-striped">
+        <thead>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+            <th>Salary</th>
+            <th>Location</th>
+            <th>Designation</th>
+              </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let detail of details">
+                <td>{{detail.id}}</td>
+                <td>{{detail.ename}}</td>
+                <td>{{detail.salary}}</td>
+                <td>{{detail.location}}</td>
+                <td>{{detail.designation}}</td>
+                <td><a class="edit" (click)="editData(detail)">Edit</a><a class="delete" (click)="deleteData(detail.id)">Delete</a></td>
+
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="card-footer">
+        <h2 class="text-success" style="text-align: center;" (click)="addDetails()">+ Add details </h2>
+    </div>
+</div>
+</div><br><br>
+
+<div class="col-md-4 offset-md-4">
+<div class="form">
+  <form #empForm="ngForm" (ngSubmit)="onsubmit(empForm)" *ngIf="show">
+    <div class="id">
+        <label for="id" class="form-label">Id</label>
+        <input type="number" class="form-control" name="id" [(ngModel)]="id">
+    </div>
+    <div class="name">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" name="ename" [(ngModel)]="ename">
+    </div>
+    <div class="salary">
+        <label for="salary" class="form-label">Salary</label>
+        <input type="number" class="form-control" name="salary" [(ngModel)]="salary">
+    </div>
+    <div class="location">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" class="form-control" name="location" [(ngModel)]="location">
+    </div>
+    <div class="designation">
+        <label for="designation" class="form-label">Designation</label>
+        <input type="text" class="form-control" name="designation" [(ngModel)]="designation">
+    </div>
+    <div class="buttons">
+    <button type="submit" class="btn btn-success add" *ngIf="add">Add</button>
+    <button type="submit" (click)="updateData()" class="btn btn-warning update" *ngIf="update">update</button>
+</div>
+
+  </form>
+</div>
+</div>
+
